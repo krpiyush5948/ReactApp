@@ -1,16 +1,11 @@
-import React, { Component } from 'react';
-import { render } from '@testing-library/react';
+import React from 'react';
 import { GoogleLogin } from 'react-google-login';
-import Register from './Register'
-
 
 class GoggleSignIn extends React.Component {
     constructor(props){
         super()
         
-    }
-  
-
+    }   
     render() {
         const responseGoogle = (response) => {
             // console.log(Object.keys(response));

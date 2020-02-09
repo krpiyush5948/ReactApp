@@ -1,27 +1,42 @@
-import React, { Components } from 'react'
+import React from 'react'
+import { withRouter } from "react-router"
 import { GoogleLogout } from 'react-google-login';
 
+
+
+
 class GoggleSignOut extends React.Component {
-    
+    constructor(props) {
+        super()
+
+
+    }
+    onLogoutSuccess = () => {
+        const { history } = this.props;
+        if (history) history.push('/signIn');
+    }
+
     render() {
-        const logout = (res)=>{
-            console.log(res)
-            console.log("logout successfully")
+        const logout = (res) => {
+
+            this.onLogoutSuccess();
         }
-        
+
         return (
-            
+
             <div>
-                <h3> sign out</h3>
+
                 <GoogleLogout
                     clientId="440206651313-apod0sn7jjs16mj4vo79v969hgmnh9c0.apps.googleusercontent.com"
                     buttonText="Logout"
-                     onLogoutSuccess={logout}
+                    onLogoutSuccess={logout} 
+                    className=" logout"
                 >
                 </GoogleLogout>
             </div>
         )
     }
+
 }
 
-export default GoggleSignOut;
+export default withRouter(GoggleSignOut); 

@@ -1,9 +1,11 @@
-
-import React, { Components } from 'react'
+    
+import React from 'react'
 import GoogleSignIn from './GoggleSignIn'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Register from './Register'
 import Header from './Header'
+import LeftHeader from './LeftHeader.jsx'
+
 
 
 class Myapp extends React.Component {
@@ -11,6 +13,7 @@ class Myapp extends React.Component {
         return (
             <div className="Myapp">
                 <Router>
+                <Header/>
                     <>
                         <Route path="/" exact component={GoogleSignIn}/>
                         <Route path="/signIn" component={GoogleSignIn}/>
@@ -18,8 +21,9 @@ class Myapp extends React.Component {
                         <Route path ="/header" component={Header}/>
                       
                     </>
+                 
                 </Router>
-                {/* <GoogleSignIn/> */}
+                
             </div>
         )
     }
