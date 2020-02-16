@@ -1,4 +1,5 @@
 import React  from 'react'
+import ShowCompany from './ShowCompany';
 
 
 
@@ -30,7 +31,7 @@ class Register extends React.Component{
     render(){
         return(
             <div className="container">
-               <form onSubmit= {this.handleSubmit}>
+               {/* <form onSubmit= {this.handleSubmit}>
                    <div className="col-sm-6">
                    <label>
                     Name:
@@ -46,7 +47,8 @@ class Register extends React.Component{
                    <div className="col-sm-6">
                    <input type ="submit" className="btn btn-primary"value = "submit"/>
                    </div>
-               </form>
+               </form> */}
+               <ShowCompany/>
               
             </div>
         )
